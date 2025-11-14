@@ -1,3 +1,8 @@
+:root{
+    --formback: #f0f0f0;
+    --formborder: #ccc;
+    --formlabelcolor: #333;
+}
 *{
     margin: 0;
     padding: 0;
@@ -5,4 +10,100 @@
 }
 body{
     height:100dvh;
+    display:flex;
+    flex-direction: column;
+}
+header{
+    display:flex;
+    align-items: center;
+    height:100px;
+    background:linear-gradient(to right,black, transparent) ,url("picsum.photos/1600/100");
+    color:white;
+    text-shadow: 0 0 10px yellow;
+    font:bold 2rem system-ui;
+    padding: 0 2rem;
+}
+main{
+    flex-grow:5;
+    padding: 1rem clamp(3rem, 6rem, 30%);
+}
+section{
+    background: rgb(0,0,0,.2);
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+form{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  width:40rem;
+  padding:.5rem;
+  background: var(--formback);
+  border-radius:.6rem;
+}
+input, select, textarea{
+  width:calc(100% - 1rem);
+  font:1.1rem system-ui;
+  padding: 0.8rem;
+  border:1px solid var(--formborder);
+  border-radius:.3rem;
+}
+
+label{
+  font:.8rem system-ui;
+  color:var(--formlabelcolor);
+}
+form [type="submit"]{
+  width:30%;
+  margin:1.5rem 0rem;
+  margin-bottom:.6rem;
+  padding:.5rem;
+}
+
+details{
+    padding:.5rem;
+    font:1.2rem system-ui;
+    border:1px solid rgb(255, 255, 255);
+    border-radius:.6rem;
+    margin-bottom: .5rem;;
+}
+details summary{
+    display:flex;
+  cursor:pointer;
+  user-select: none;
+  margin-bottom:.5rem;
+  font:bold 1.1rem system-ui
+}
+details[open] summary{
+  color:rgb(65, 65, 65);
+  border-radius:.3rem;
+
+}
+
+
+footer{
+    height:50px;
+    background:rgb(46, 46, 46);
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font:1rem system-ui;
+}
+.flex{
+    flex-grow:5;
+}
+.vote{
+    display:flex;
+    gap:1rem;
+    padding: 0 .5rem;
+}
+.vote a{
+    text-decoration:none;
+    color:black;
+    font:bold 1.2rem system-ui;
+    background:rgb(165, 198, 164);
+    padding:.3rem .6rem;
+    border-radius:.3rem;
 }

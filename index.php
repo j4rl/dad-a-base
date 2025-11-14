@@ -42,7 +42,17 @@ $result=mysqli_query($conn,$sql);
         </section>
         <section>
             <?php while($row=mysqli_fetch_assoc($result)): ?>
-                <details><summary><?=$row['joketext']?></summary><?=$row['jokeanswer']?></details>
+                <details>
+                    <summary>
+                        <?=$row['joketext']?>
+                        <div class="flex"></div>
+                        <div class="vote">
+                            <a href="index.php?vote=down">–</a>
+                            <a href="index.php?vote=up">+</a>
+                        </div>
+                    </summary>
+                        <?=$row['jokeanswer']?>
+                    </details>
          <?php endwhile  ?>
         </section>
     </main>
