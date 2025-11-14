@@ -14,6 +14,17 @@ if(isset($_POST['btn'])){
     $result=mysqli_query($conn,$sql);
 }
 
+if(isset($_GET['vote'])){
+    $vote=$_GET['vote'];
+    $id=$_GET['id'];
+    if($vote=="up"){
+        $sql="UPDATE jokes SET score=score+1 WHERE id=$id";
+    }elseif($vote=="down"){
+        $sql="UPDATE jokes SET score=score-1 WHERE id=$id";
+    }
+    $result=mysqli_query($conn,$sql);
+}
+
 $sql="SELECT * FROM jokes ORDER BY score DESC";
 $result=mysqli_query($conn,$sql);
 
