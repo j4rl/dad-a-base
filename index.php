@@ -47,8 +47,8 @@ $result=mysqli_query($conn,$sql);
                         <?=$row['joketext']?>
                         <div class="flex"></div>
                         <div class="vote">
-                            <a href="index.php?vote=down">–</a>
-                            <a href="index.php?vote=up">+</a>
+                            <a href="index.php?vote=down&id=<?=$row['id']?>">–</a>
+                            <a href="index.php?vote=up&id=<?=$row['id']?>">+</a>
                         </div>
                     </summary>
                         <?=$row['jokeanswer']?>
