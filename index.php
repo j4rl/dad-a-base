@@ -6,6 +6,15 @@ $user="root";
 $pass="";
 $db="dad_a_base";
 $conn=mysqli_connect($host, $user, $pass, $db);
+/*
+function fix(string $value): string
+{
+    // Trim whitespace, strip any HTML tags, escape remaining special chars
+    $value = trim($value);
+    $value = strip_tags($value);
+    return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+*/
 
 if(isset($_POST['btn'])){
     $joketext=$_POST['joketext'];
