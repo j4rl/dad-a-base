@@ -6,6 +6,7 @@ $user="root";
 $pass="";
 $db="dad_a_base";
 $conn=mysqli_connect($host, $user, $pass, $db);
+
 /*
 function fix(string $value): string
 {
@@ -34,7 +35,7 @@ if(isset($_GET['vote'])){
     $result=mysqli_query($conn,$sql);
 }
 
-$sql="SELECT * FROM jokes ORDER BY score DESC";
+$sql="SELECT * FROM jokes WHERE score >= 0 ORDER BY score DESC";
 $result=mysqli_query($conn,$sql);
 
 ?>
